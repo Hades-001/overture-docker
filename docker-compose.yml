@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  overture:
+    image: hades001/overture-docker:tagname
+    container_name: overture
+    volumes:
+      - "data:/etc/overture"
+    networks:
+      - net
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    restart: unless-stopped
+
+volumes:
+  data:
+
+networks:
+  net:
+    driver: bridge

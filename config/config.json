@@ -1,0 +1,102 @@
+{
+    "BindAddress": ":53",
+    "DebugHTTPAddress": "127.0.0.1:5555",
+    "PrimaryDNS": [
+    {
+        "Name": "TUNADNS",
+        "Address": "101.6.6.6:5353",
+        "Protocol": "tcp",
+        "SOCKS5Address": "",
+        "Timeout": 6,
+        "EDNSClientSubnet": {
+            "Policy": "disable",
+            "ExternalIP": "",
+            "NoCookie": true
+        }
+    },
+    {
+        "Name": "USTCDNS",
+        "Address": "202.141.162.123:5353",
+        "Protocol": "udp",
+        "SOCKS5Address": "",
+        "Timeout": 6,
+        "EDNSClientSubnet": {
+            "Policy": "disable",
+            "ExternalIP": "",
+            "NoCookie": true
+        }
+    },
+    {
+        "Name": "ALIDNS",
+        "Address": "https://dns.alidns.com/dns-query",
+        "Protocol": "https",
+        "SOCKS5Address": "",
+        "Timeout": 6,
+        "EDNSClientSubnet": {
+            "Policy": "disable",
+            "ExternalIP": "",
+            "NoCookie": true
+        }
+    }
+    ],
+    "AlternativeDNS": [
+    {
+        "Name": "OpenDNS",
+        "Address": "https://doh.opendns.com/dns-query",
+        "Protocol": "https",
+        "SOCKS5Address": "",
+        "Timeout": 6,
+        "EDNSClientSubnet": {
+            "Policy": "disable",
+            "ExternalIP": "",
+            "NoCookie": true
+        }
+    },
+    {
+        "Name": "GoogleDNS",
+        "Address": "dns.google:853@8.8.8.8",
+        "Protocol": "tcp-tls",
+        "SOCKS5Address": "",
+        "Timeout": 6,
+        "EDNSClientSubnet": {
+            "Policy": "disable",
+            "ExternalIP": "",
+            "NoCookie": true
+        }
+    },
+    {
+        "Name": "CloudflareDNS",
+        "Address": "https://cloudflare-dns.com/dns-query",
+        "Protocol": "https",
+        "SOCKS5Address": "",
+        "Timeout": 6,
+        "EDNSClientSubnet": {
+            "Policy": "disable",
+            "ExternalIP": "",
+            "NoCookie": true
+        }
+    }
+    ],
+    "OnlyPrimaryDNS": false,
+    "IPv6UseAlternativeDNS": false,
+    "AlternativeDNSConcurrent": false,
+    "WhenPrimaryDNSAnswerNoneUse": "PrimaryDNS",
+    "IPNetworkFile": {
+        "Primary": "/etc/overture/china_ip_list.txt",
+        "Alternative": "/etc/overture/ip_network_alternative.txt"
+    },
+    "DomainFile": {
+        "Primary": "/etc/overture/china_domain.txt",
+        "Alternative": "/etc/overture/gfwlist_domain.txt",
+        "Matcher":  "full-map"
+    },
+    "HostsFile": {
+        "HostsFile": "/etc/overture/hosts_overture.txt",
+        "Finder": "full-map"
+      },
+    "MinimumTTL": 0,
+    "DomainTTLFile" : "/etc/overture/domain_ttl.txt",
+    "CacheSize": 0,
+    "RejectQtype": [255]
+}
+
